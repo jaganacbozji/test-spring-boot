@@ -25,6 +25,13 @@ INSERT INTO side_effect(short_description, long_description, frequency, vaccine_
 ('Bol u trbuhu', 'Srednja bol u trbuhu', 5.7, 4),
 ('Grlobolja', 'Ostra bol u grlu', 6.4, 5);
 
+INSERT INTO medication_prescription(prescription_id, prescription_name, vaccine_id) VALUES
+(prescription_sequence.nextval, 'Prvi recept',1),
+(prescription_sequence.nextval, 'Drugi recept',2),
+(prescription_sequence.nextval, 'Treci recept',3),
+(prescription_sequence.nextval, 'Cetvrti recept',4),
+(prescription_sequence.nextval, 'Peti recept',5);
+
 
 
 /*

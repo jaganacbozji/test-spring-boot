@@ -47,7 +47,7 @@ DROP TABLE IF EXISTS medication_prescription;
 
 CREATE TABLE medication_prescription (
                                          id INT AUTO_INCREMENT,
-                                         prescription_id INT AUTO_INCREMENT,
+                                         prescription_id INT NOT NULL,
                                          prescription_name VARCHAR(100) NOT NULL,
                                          vaccine_id INT NOT NULL,
                                          PRIMARY KEY (id),
