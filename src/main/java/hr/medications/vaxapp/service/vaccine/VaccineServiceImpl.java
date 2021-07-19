@@ -20,29 +20,21 @@ public class VaccineServiceImpl implements VaccineService {
 
     @Override
     public List<VaccineDTO> findAll() {
-        return jpaVaccineRepository.findAll().stream().map(VaccineServiceImpl::mapVaccineToDTOWithoutSideEffectList).collect(Collectors.toList());
+        return jpaVaccineRepository.findAll().stream().map(VaccineServiceImpl::mapVaccineToDTO).collect(Collectors.toList());
     }
 
     @Override
     public Optional<VaccineDTO> findByResearchName(String researchName) {
-        return jpaVaccineRepository.findByResearchName(researchName).map(VaccineServiceImpl::mapVaccineToDTOWithSideEffectList);
+        return jpaVaccineRepository.findByResearchName(researchName).map(VaccineServiceImpl::mapVaccineToDTO);
     }
 
-    public static VaccineDTO mapVaccineToDTOWithoutSideEffectList(Vaccine vaccine) {
+    public static VaccineDTO mapVaccineToDTO(Vaccine vaccine) {
         return new VaccineDTO(
                 vaccine.getResearchName(),
                 vaccine.getVaccineType(),
                 vaccine.getRequiredNumberOfShots(),
                 vaccine.getAvailableNumberOfShots(),
-                null);
-    }
-    public static VaccineDTO mapVaccineToDTOWithSideEffectList(Vaccine vaccine) {
-        return new VaccineDTO(
-                vaccine.getResearchName(),
-                vaccine.getVaccineType(),
-                vaccine.getRequiredNumberOfShots(),
-                vaccine.getAvailableNumberOfShots(),
-                vaccine.getSideEffects().stream().map(SideEffectServiceImpl::mapSideEffectToDTOWithoutVaccine).collect(Collectors.toList()));
+                vaccine.getSideEffects().stream().map(SideEffectServiceImpl::mapSideEffectToDTO).collect(Collectors.toList()));
     }
 
 

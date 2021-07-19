@@ -5,8 +5,8 @@ import hr.medications.vaxapp.model.sideEffect.SideEffectDTO;
 
 public class SideEffectServiceImpl {
 
-    public static SideEffectDTO mapSideEffectToDTOWithoutVaccine(SideEffect sideEffect) {
-        return new SideEffectDTO(sideEffect.getShortDescription(), sideEffect.getLongDescription(), sideEffect.getFrequency(), null);
+    public static SideEffectDTO mapSideEffectToDTO(SideEffect sideEffect) {
+        return new SideEffectDTO(sideEffect.getShortDescription(), sideEffect.getLongDescription(), sideEffect.getFrequency());
     }
 
 }

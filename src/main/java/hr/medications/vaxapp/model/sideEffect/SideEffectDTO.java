@@ -14,5 +14,4 @@ public class SideEffectDTO {
     private String shortDescription;
     private String longDescription;
     private Double frequency;
-    private Vaccine vaccine;
 }
