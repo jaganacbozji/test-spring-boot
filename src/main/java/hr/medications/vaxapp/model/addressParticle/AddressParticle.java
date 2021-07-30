@@ -19,21 +19,21 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name="adrese_cestice")
+@Table(name="\"adrese_cestice\"")
 public class AddressParticle {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private String gml_id;
-    @Column(name="cestica_id")
+    @Column(name="\"cestica_id\"")
     private String cestica_id;
-    @Column(name="adresa_opisna")
+    @Column(name="\"adresa_opisna\"")
     private String adresa_opisna;
-    @Column(name="naselje")
+    @Column(name="\"naselje\"")
     private String naselje;
-    @Column(name="naselje_mbr")
+    @Column(name="\"naselje_mbr\"")
     private Integer naselje_mbr;
-    @Column(name="ulica")
+    @Column(name="\"ulica\"")
     private String ulica;
-    @Column(name="ulica")
+    @Column(name="\"ulica_rbr\"")
     private Integer ulica_rbr;
 }

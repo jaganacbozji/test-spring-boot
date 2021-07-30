@@ -1,9 +1,11 @@
 package hr.medications.vaxapp.rest;
 
 
+import hr.medications.vaxapp.model.addressParticle.AddressParticle;
 import hr.medications.vaxapp.model.addressParticle.AddressParticleDTO;
 import hr.medications.vaxapp.service.addressParticle.AddressParticleService;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +21,8 @@ public class AddressParticleController {
         this.addressParticleService = addressParticleService;
     }
 
-    public List<AddressParticleDTO> getAllAddressParticles() {
+    @GetMapping
+    public List<AddressParticle> getAllAddressParticles() {
         return addressParticleService.findAll();
     }
 }
